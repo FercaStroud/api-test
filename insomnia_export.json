@@ -1,0 +1,353 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2024-07-08T00:00:00.000Z",
+    "__export_source": "insomnia.desktop.app:v2023.2.2",
+    "resources": [
+        {
+            "_id": "__ENV_1",
+            "type": "environment",
+            "name": "Base Environment",
+            "data": {
+                "base_url": "http://localhost:8000/api",
+                "token": ""
+            },
+            "dataPropertyOrder": {
+                "&": ["base_url", "token"]
+            },
+            "isPrivate": false,
+            "metaSortKey": 1678727981000,
+            "_type": "environment"
+        },
+        {
+            "_id": "__wrk_1",
+            "type": "workspace",
+            "name": "Library API",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_1",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/auth-jwt/login",
+            "name": "JWT Login",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"email\": \"user@example.com\", \"password\": \"password\"}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 1,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/auth-jwt/logout",
+            "name": "JWT Logout",
+            "description": "",
+            "method": "POST",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{ token }}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 2,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_3",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/auth/login",
+            "name": "Sanctum Login",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"email\": \"user@example.com\", \"password\": \"password\"}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 3,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_4",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/auth/logout",
+            "name": "Sanctum Logout",
+            "description": "",
+            "method": "POST",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{ token }}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 4,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_5",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/users",
+            "name": "Create User",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"hbkey\": \"unique_hbkey\", \"first_name\": \"John\", \"last_name\": \"Doe\", \"date_birth\": \"1990-01-01\", \"address\": \"123 Main St\", \"role\": \"user\", \"password\": \"password\", \"email\": \"john@example.com\"}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{ token }}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_6",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/users",
+            "name": "Get Users",
+            "description": "",
+            "method": "GET",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{ token }}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 6,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_7",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/books",
+            "name": "Create Book",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"hbkey\": \"unique_hbkey\", \"title\": \"Test Book\", \"description\": \"This is a test book\", \"code\": \"unique_code\"}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{ token }}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 7,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_8",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/books",
+            "name": "Get Books",
+            "description": "",
+            "method": "GET",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{ token }}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 8,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_9",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/categories",
+            "name": "Create Category",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\"hbkey\": \"unique_hbkey\", \"name\": \"Test Category\", \"description\": \"This is a test category\"}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{ token }}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 9,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_10",
+            "parentId": "__wrk_1",
+            "modified": 0,
+            "created": 0,
+            "url": "{{ base_url }}/categories",
+            "name": "Get Categories",
+            "description": "",
+            "method": "GET",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{ token }}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 10,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        }
+    ]
+}
